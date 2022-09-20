@@ -9,13 +9,13 @@ using UnityEditor;
 
 public class MenuUIHandler : MonoBehaviour
 {
-    public TMP_InputField NameInput;
-    public TextMeshProUGUI TitleText;
+    [SerializeField] private TMP_InputField NameInput;
+    [SerializeField] private TextMeshProUGUI TitleText;
    
     private void Start()
     {
-        TitleText.SetText(string.Format("Mejor puntuación : {0} : {1}", MenuManager.Instance.BestScorePlayer, MenuManager.Instance.BestScorePoints));
-        NameInput.text = MenuManager.Instance.BestScorePlayer;
+        TitleText.SetText(string.Format("Mejor puntuación : {0} : {1}", DataManager.Instance.BestScorePlayer, DataManager.Instance.BestScorePoints));
+        NameInput.text = DataManager.Instance.BestScorePlayer;
     }
 
     public void StartNew()
@@ -35,6 +35,6 @@ public class MenuUIHandler : MonoBehaviour
 
     private void SetPlayerName()
     {
-        MenuManager.Instance.PlayerName = NameInput.text;
+        DataManager.Instance.PlayerName = NameInput.text;
     }
 }

@@ -76,22 +76,22 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
 
-        if (m_Points > MenuManager.Instance.BestScorePoints)
+        if (m_Points > DataManager.Instance.BestScorePoints)
         {
-            MenuManager.Instance.BestScorePlayer = MenuManager.Instance.PlayerName;
-            MenuManager.Instance.BestScorePoints = m_Points;
-            BestScoreText.text = $"Mejor puntuación : {MenuManager.Instance.BestScorePlayer} : {MenuManager.Instance.BestScorePoints}";
-            MenuManager.Instance.SaveBestScore();
+            DataManager.Instance.BestScorePlayer = DataManager.Instance.PlayerName;
+            DataManager.Instance.BestScorePoints = m_Points;
+            BestScoreText.text = $"Mejor puntuación : {DataManager.Instance.BestScorePlayer} : {DataManager.Instance.BestScorePoints}";
+            DataManager.Instance.SaveBestScore();
         }
 
     }
 
     public void SetBestScore()
     {
-        if (MenuManager.Instance != null)
+        if (DataManager.Instance != null)
         {
-            MenuManager.Instance.LoadBestScore();
-            BestScoreText.text = $"Mejor puntuación : {MenuManager.Instance.BestScorePlayer} : {MenuManager.Instance.BestScorePoints}";
+            DataManager.Instance.LoadBestScore();
+            BestScoreText.text = $"Mejor puntuación : {DataManager.Instance.BestScorePlayer} : {DataManager.Instance.BestScorePoints}";
         }
     }
 }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class MenuManager : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
-    public static MenuManager Instance;
+    public static DataManager Instance;
     public string PlayerName;
     public string BestScorePlayer;
     public int BestScorePoints;
-    private string saveFilePath = "/bestscore.json";
+    private readonly string saveFilePath = "/bestscore.json";
 
     private void Awake()
     {
